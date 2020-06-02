@@ -9,23 +9,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TestActivity"
-                  android:label="TestActivity">
+        <activity
+            android:name=".MainActivity"
+            android:label="MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".ResultActivity"
-                  android:label="ResultActivity"/>
-        <activity android:name=".NameActivity"
-                  android:label="NameActivity"/>
-        <activity android:name=".ConstellationActivity"
-                  android:label="ConstellationActivity"/>
-        <activity android:name=".MainActivity"
-                  android:label="MainActivity">
+        <!-- AppThem.Result 테마지정 -->
+        <activity
+            android:name=".ResultActivity"
+            android:theme="@style/AppTheme.Result"
+            android:label="ResultActivity" />
+        <!-- AppThem.Name 테마지정 -->
+        <activity
+            android:name=".NameActivity"
+            android:theme="@style/AppTheme.Name"
+            android:label="NameActivity" />
+        <!-- AppThem.Constellation 테마지정 -->
+        <activity
+            android:name=".ConstellationActivity"
+            android:theme="@style/AppTheme.Constellation"
+            android:label="ConstellationActivity">
+
         </activity>
+        <activity
+            android:name=".TestActivity"
+            android:label="TestActivity">
+        </activity>
+        <activity
+            android:name=".ConstraintLayoutActivity">
+        </activity>
+
     </application>
 
 </manifest>
