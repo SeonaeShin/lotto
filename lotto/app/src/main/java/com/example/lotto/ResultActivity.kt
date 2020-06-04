@@ -2,8 +2,11 @@ package com.example.lotto
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_result.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ResultActivity : AppCompatActivity() {
 
@@ -17,6 +20,23 @@ class ResultActivity : AppCompatActivity() {
 
        //전달받은 결과 배열을 가져온다
        val result = intent.getIntegerArrayListExtra("result")
+
+       //전달받은 이름을 가져온다
+       val name = intent.getStringExtra("name")
+
+       //전달받은 별자리를 가져온다
+       val constellation = intent.getStringExtra("constellation")
+
+       //결과화면 기본 텍스트
+       resultLabel.text = "랜덤으로 생성된 \n로또번호입니다"
+
+       if(!TextUtils.isEmpty(name)){
+           resultLabel.text = "${name} 님의 \n${SimpleDateFormat("yyyy년 MM월 DD일").format(Date())}\n로또번호 입니다"
+       }
+
+       if(!TextUtils.isEmpty(constellation)){
+           resultLabel.text = "${constellation} 의 \n${SimpleDateFormat("yyyy년 MM월 DD일").format(Date())}\n로또번호 입니다"
+       }
 
        result?.let {
            updateLottoBallImage(result.sortedBy { it})
